@@ -1,0 +1,70 @@
+.header {
+    font-size: clamp(20px, 5vw, 30px);
+}
+
+.erste_beschreibung {
+    padding-left: 10px;
+    font-size: clamp(15px, 5vw, 20px);
+}
+
+.hauptgerichte_beilage {
+    font-size: clamp(10px, 5vw, 25px);
+    font-weight: bold;
+    color: gray;
+}
+
+.second_img {
+    font-size: clamp(15px, 5vw, 20px);
+    font-weight: bold;
+}
+
+.second_img h1 {
+    padding-left: 10px;
+}
+
+.menu_beschreibungen{
+    display: flex;
+    flex-direction: column;
+    padding-left: 10px;
+    gap: 5px;
+}
+
+.menu_beschreibungen p {
+    color: orange;
+}
+
+.beilagen_beschreibungen {
+    display: flex;
+    flex-direction: column;
+    padding-left: 10px;
+    gap: 5px;
+}
+
+.beilagen_beschreibungen p {
+    color: orange;
+}
+
+.basket_title {
+    background-color: orange;
+    border-radius: 3px;
+    height: 40px;
+    padding: 10px;
+    margin-bottom: 20px;
+    color: black;
+    align-items: center;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+}
+
+.item_info {
+    font-size: clamp(10px, 5vw, 15px);
+}
+
+.gesamtkosten {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0px;
+    padding: 10px 0px;
+    border-top: 1px solid #333;
+}

@@ -1,0 +1,38 @@
+.header img {
+    width: clamp(30px, 5vw, 50px);
+    height: auto;
+    margin-left: clamp(10px, 2vw, 20px);
+}
+
+.content_wrapper img {
+    height: 150px;
+    object-fit: cover;
+    object-position: left;
+    margin-top: 0;
+    width: 100%;
+}
+
+.second_img {
+    height: 150px;
+    object-fit: cover;
+    object-position: left;
+    margin-top: 0;
+    width: calc(100% - 20px);
+    margin-left: 10px;
+}
+
+.hauptgerichte_beilage img {
+    width: clamp(15px, 5vw, 30px);
+    height: auto;
+    align-items: center;
+}
+
+.third_img {
+    height: 150px;
+    object-fit: cover;
+    object-position: left;
+    margin-top: 0;
+    width: calc(100% - 20px);
+    margin-left: 10px;
+    padding-top: 10px;
+}
