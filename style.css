@@ -142,8 +142,13 @@ a :hover {
     padding-top: 6px;
   }
 
-  /* .gesamtkosten {
+  .bestell_button_mobile {
+    cursor: pointer;
+    background-color: orange;
+    padding: 10px;
+    font-weight: bold;
     display: flex;
-    justify-content: space-around;
-  } */
+    justify-content: center;
+    align-items: center;
+  }
 }
