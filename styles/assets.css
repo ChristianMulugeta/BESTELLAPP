@@ -36,3 +36,15 @@
     margin-left: 10px;
     padding-top: 10px;
 }
+
+.round_img {
+    position: absolute;
+    top: 6%;
+    left: 40%;
+    transform: translate(-50%, 50%) scale(0.2);
+    width: 100vh;
+    height: 800vh;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid black;
+}
