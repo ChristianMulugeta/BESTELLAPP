@@ -90,7 +90,7 @@ a :hover {
 
 
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
 
   .footer {
     padding-bottom: 70px;
@@ -151,4 +151,5 @@ a :hover {
     justify-content: center;
     align-items: center;
   }
+
 }
