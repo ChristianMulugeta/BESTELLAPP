@@ -142,7 +142,7 @@ a :hover {
     padding-top: 6px;
   }
 
-  .bestell_button_mobile {
+  #bestell_button_mobile {
     cursor: pointer;
     background-color: orange;
     padding: 10px;

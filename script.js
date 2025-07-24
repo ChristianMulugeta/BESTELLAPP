@@ -1,16 +1,19 @@
 const basketMenuDesktop = document.getElementById("basket_menus_desktop");
 const basketMenuMobile = document.getElementById("basket_menus_mobile");
 
-const kostenDesktop = document.getElementById("kosten_desktop");
-const kostenMobile = document.getElementById("kosten_mobile");
+const costsDesktop = document.getElementById("kosten_desktop");
+const costsMobile = document.getElementById("kosten_mobile");
 
 const basketWrapperResponsive = document.getElementById("basket_mobile");
 const basketTitle = document.getElementById("basket_title");
+
+const bestell_button = document.getElementById("bestell_button");
 
 basketTitle.addEventListener("click", () => {
     basketWrapperResponsive.classList.toggle("visible");
     
 });
+
 
 let total = 0;
 
@@ -48,6 +51,25 @@ const product = [
     
 ];
 
+bestell_button.addEventListener("click", () =>{
+    document.getElementById("basket_menus_desktop").innerHTML = ""
+    document.getElementById("basket_menus_desktop").innerHTML = "Vielen Dank für Ihre Bestellung"
+    document.getElementById("kosten_desktop").innerHTML = "0.00$"
+
+    basket.splice(0);
+    total = 0;
+    
+});
+
+bestell_button_mobile.addEventListener("click", () =>{
+    document.getElementById("basket_menus_mobile").innerHTML = ""
+    document.getElementById("basket_menus_mobile").innerHTML = "Vielen Dank für Ihre Bestellung"
+    document.getElementById("kosten_mobile").innerHTML = "0.00$"
+
+    basket.splice(0);
+    total = 0;
+});
+
 const basket = [];
 
 const buttons = document.getElementsByClassName("plus_button");
@@ -76,44 +98,54 @@ buttons[i].addEventListener("click", function () {
 function updateBasketDisplay() {
     basketMenuDesktop.innerHTML = "";
     basketMenuMobile.innerHTML = "";
-
     if (basket.length === 0) {
         basketMenuDesktop.innerText = "Warenkorb leer";
         basketMenuMobile.innerText = "Warenkorb leer";
-        kostenDesktop.innerText = "0.00$";
-        kostenMobile.innerText = "0.00$";
+        costsDesktop.innerText = "0.00$";
+        costsMobile.innerText = "0.00$";
         return;
     }
+    costsDesktop.innerText = `${total.toFixed(2)}$`;
+    costsMobile.innerText = `${total.toFixed(2)}$`;
+    createDesktopBasketItem();
+    createMobileBasketItem();
+    plusButtons();
+    minusButtons();
+}
 
+function createDesktopBasketItem() {
     basket.forEach(item => {
         const itemTotal =item.price * item.quantity;
-
         let itemElementDesktop = document.createElement("div");
-        itemElementDesktop.className = "basket_item";
-        itemElementDesktop.innerHTML = `
-        <span class="item_info">${item.title} x${item.quantity} - ${itemTotal.toFixed(2)}$</span>
-        <div class="item_buttons">
-            <button class="basket_minus" data-id="${item.id}">-</button>
-            <button class="basket_plus" data-id="${item.id}">+</button>
-        </div>
-        `;
+            itemElementDesktop.className = "basket_item";
+            itemElementDesktop.innerHTML = `
+            <span class="item_info">${item.title} x${item.quantity} - ${itemTotal.toFixed(2)}$</span>
+            <div class="item_buttons">
+                <button class="basket_minus" data-id="${item.id}">-</button>
+                <button class="basket_plus" data-id="${item.id}">+</button>
+            </div>
+            `;
+            basketMenuDesktop.appendChild(itemElementDesktop);  
+    })
+}
 
-        basketMenuDesktop.appendChild(itemElementDesktop);
-
+function createMobileBasketItem() {
+    basket.forEach(item => {
+        const itemTotal =item.price * item.quantity;
         let itemElementMobile = document.createElement("div");
-        itemElementMobile.className = "basket_item";
-        itemElementMobile.innerHTML = `
-        <span class="item_info">${item.title} x${item.quantity} - ${itemTotal.toFixed(2)}$</span>
-        <div class="item_buttons">
-            <button class="basket_minus" data-id="${item.id}">-</button>
-            <button class="basket_plus" data-id="${item.id}">+</button>
-        </div>
-        `;
-        basketMenuMobile.appendChild(itemElementMobile);
-    });
+            itemElementMobile.className = "basket_item";
+            itemElementMobile.innerHTML = `
+            <span class="item_info">${item.title} x${item.quantity} - ${itemTotal.toFixed(2)}$</span>
+            <div class="item_buttons">
+                <button class="basket_minus" data-id="${item.id}">-</button>
+                <button class="basket_plus" data-id="${item.id}">+</button>
+            </div>
+            `;
+            basketMenuMobile.appendChild(itemElementMobile);  
+    })
+}
 
-    kostenDesktop.innerText = `${total.toFixed(2)}$`;
-    kostenMobile.innerText = `${total.toFixed(2)}$`;
+function plusButtons() {
 
     const plusButtons = document.getElementsByClassName("basket_plus");
     for (let btn of plusButtons) {
@@ -127,6 +159,9 @@ function updateBasketDisplay() {
             }
         };
     }
+}
+
+function minusButtons() {
 
     const minusButtons = document.getElementsByClassName("basket_minus");
     for (let btn of minusButtons) {
