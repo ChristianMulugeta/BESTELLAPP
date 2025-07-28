@@ -1,32 +1,32 @@
 const product = [
     {
         id: 0,
-        title: "pizza krabben",
+        title: "Pizza Krabben",
         price: 9.50,
     },
     {
         id: 1,
-        title: "pizza margherita",
+        title: "Pizza Margherita",
         price: 5.90,
     },
     {
         id: 2,
-        title: "pizza diavolo (scharf)",
+        title: "Pizza Diavolo (scharf)",
         price: 8.50,
     },
     {
         id: 3,
-        title: "pizzabrötcheb",
+        title: "Pizzabrötchen",
         price: 12.90,
     },
     {
         id: 4,
-        title: "pommes mit nuggets",
+        title: "Pommes mit Nuggets",
         price: 4.50,
     },
     {
         id: 5,
-        title: "gemischter salat",
+        title: "Gemischter Salat",
         price: 5.90,
     },
     

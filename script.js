@@ -9,6 +9,12 @@ const basketTitle = document.getElementById("basket_title");
 
 const bestell_button = document.getElementById("bestell_button");
 
+const buttons = document.getElementsByClassName("plus_button");
+
+
+const basket = [];
+
+
 basketTitle.addEventListener("click", () => {
     basketWrapperResponsive.classList.toggle("visible");
     
@@ -16,40 +22,6 @@ basketTitle.addEventListener("click", () => {
 
 
 let total = 0;
-
-const product = [
-    {
-        id: 0,
-        title: "Pizza Krabben",
-        price: 9.50,
-    },
-    {
-        id: 1,
-        title: "Pizza Margherita",
-        price: 5.90,
-    },
-    {
-        id: 2,
-        title: "Pizza Diavolo (scharf)",
-        price: 8.50,
-    },
-    {
-        id: 3,
-        title: "Pizzabrötchen",
-        price: 12.90,
-    },
-    {
-        id: 4,
-        title: "Pommes mit Nuggets",
-        price: 4.50,
-    },
-    {
-        id: 5,
-        title: "Gemischter Salat",
-        price: 5.90,
-    },
-    
-];
 
 bestell_button.addEventListener("click", () =>{
     document.getElementById("basket_menus_desktop").innerHTML = ""
@@ -69,10 +41,6 @@ bestell_button_mobile.addEventListener("click", () =>{
     basket.splice(0);
     total = 0;
 });
-
-const basket = [];
-
-const buttons = document.getElementsByClassName("plus_button");
 
 for (let i = 0; i < buttons.length; i++) {
 buttons[i].addEventListener("click", function () {
@@ -111,38 +79,6 @@ function updateBasketDisplay() {
     createMobileBasketItem();
     plusButtons();
     minusButtons();
-}
-
-function createDesktopBasketItem() {
-    basket.forEach(item => {
-        const itemTotal =item.price * item.quantity;
-        let itemElementDesktop = document.createElement("div");
-            itemElementDesktop.className = "basket_item";
-            itemElementDesktop.innerHTML = `
-            <span class="item_info">${item.title} x${item.quantity} - ${itemTotal.toFixed(2)}$</span>
-            <div class="item_buttons">
-                <button class="basket_minus" data-id="${item.id}">-</button>
-                <button class="basket_plus" data-id="${item.id}">+</button>
-            </div>
-            `;
-            basketMenuDesktop.appendChild(itemElementDesktop);  
-    })
-}
-
-function createMobileBasketItem() {
-    basket.forEach(item => {
-        const itemTotal =item.price * item.quantity;
-        let itemElementMobile = document.createElement("div");
-            itemElementMobile.className = "basket_item";
-            itemElementMobile.innerHTML = `
-            <span class="item_info">${item.title} x${item.quantity} - ${itemTotal.toFixed(2)}$</span>
-            <div class="item_buttons">
-                <button class="basket_minus" data-id="${item.id}">-</button>
-                <button class="basket_plus" data-id="${item.id}">+</button>
-            </div>
-            `;
-            basketMenuMobile.appendChild(itemElementMobile);  
-    })
 }
 
 function plusButtons() {
