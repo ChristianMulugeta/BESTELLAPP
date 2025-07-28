@@ -11,15 +11,11 @@ const bestell_button = document.getElementById("bestell_button");
 
 const buttons = document.getElementsByClassName("plus_button");
 
-
 const basket = [];
-
 
 basketTitle.addEventListener("click", () => {
     basketWrapperResponsive.classList.toggle("visible");
-    
 });
-
 
 let total = 0;
 
@@ -82,7 +78,6 @@ function updateBasketDisplay() {
 }
 
 function plusButtons() {
-
     const plusButtons = document.getElementsByClassName("basket_plus");
     for (let btn of plusButtons) {
         btn.onclick = function () {
@@ -98,7 +93,6 @@ function plusButtons() {
 }
 
 function minusButtons() {
-
     const minusButtons = document.getElementsByClassName("basket_minus");
     for (let btn of minusButtons) {
         btn.onclick = function () {
