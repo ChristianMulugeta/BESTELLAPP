@@ -11,13 +11,24 @@ const bestell_button = document.getElementById("bestell_button");
 
 const buttons = document.getElementsByClassName("plus_button");
 
+const cartCount = document.getElementById("cart_counter");
+
+
 const basket = [];
+
+let total = 0;
+
+function updateCartCount() {
+    let count = 0;
+    for (let item of basket) {
+        count += item.quantity;
+    }
+    cartCount.innerText = count;
+}
 
 basketTitle.addEventListener("click", () => {
     basketWrapperResponsive.classList.toggle("visible");
 });
-
-let total = 0;
 
 bestell_button.addEventListener("click", () =>{
     document.getElementById("basket_menus_desktop").innerHTML = ""
@@ -38,26 +49,26 @@ bestell_button_mobile.addEventListener("click", () =>{
     total = 0;
 });
 
-for (let i = 0; i < buttons.length; i++) {
-buttons[i].addEventListener("click", function () {
-    const id = parseInt(this.dataset.id); 
-    const selectedProduct = product.find(p => p.id === id);
+function addToCartButton() {
+    for (let i = 0; i < buttons.length; i++) {
+        buttons[i].addEventListener("click", function () {
+            const id = parseInt(this.dataset.id); 
+            const selectedProduct = product.find(p => p.id === id);
+            if (selectedProduct) {
+                const basketItem = basket.find(item => item.id === id);
+                if (basketItem) {
+                    basketItem.quantity += 1;
+                } else {
+                    basket.push({ ...selectedProduct, quantity: 1 });
+                }
+                total += selectedProduct.price;
+                updateBasketDisplay();
+            }    
+        });
+    }
+}
+addToCartButton();
 
-
-    if (selectedProduct) {
-
-        const basketItem = basket.find(item => item.id === id);
-        if (basketItem) {
-            basketItem.quantity += 1;
-        } else {
-            basket.push({ ...selectedProduct, quantity: 1 });
-        }
-
-        total += selectedProduct.price;
-        updateBasketDisplay();
-    }    
-});
-}        
 
 function updateBasketDisplay() {
     basketMenuDesktop.innerHTML = "";
@@ -75,6 +86,7 @@ function updateBasketDisplay() {
     createMobileBasketItem();
     plusButtons();
     minusButtons();
+    updateCartCount();
 }
 
 function plusButtons() {
