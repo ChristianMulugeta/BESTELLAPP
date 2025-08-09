@@ -19,8 +19,8 @@
     </header>
     <div class="content_wrapper">
         
-        <section class="content"><img src="./assets/img/main-img-1.jpg" alt="">
-            <img class="round_img" src="./assets/img/round-img.png" alt style="width: 90px; height: 90px;">
+        <section class="content"><img class="first_img" src="./assets/img/main-img-1.jpg" alt="">
+            <img class="round_img" src="./assets/img/round-img.png" alt >
             <div class="erste_beschreibung">
                 <h1>Paradise Pizzeria</h1>
                 <span> Bewertung (4.5 von 5 Sternen)</span>
@@ -29,9 +29,7 @@
                     <a href="#Hauptgerichte"><p>Hauptgerichte</p></a> <a href="#beilagen"><p>Beilage</p></a>
                 </div>
             </div>
-            <div class="second_img">
-                <img src="./assets/img/hauptgericht-img.jpg" alt="">
-            </div>
+            <img class="second_img" src="./assets/img/hauptgericht-img.jpg" alt="">
             <div class="menu_beschreibungen">
                 <h1 id="Hauptgerichte" class="Hauptgerichte">Hauptgerichte</h1>
                 <div class="menu">
@@ -59,9 +57,7 @@
                     <button class="plus_button" data-id="3">+</button>
                 </div>   
             </div>
-            <div class="third_img">
-                <img src="./assets/img/golden-goal-header.avif" alt="">
-            </div>
+            <img class="third_img" src="./assets/img/golden-goal-header.avif" alt="">
             <div class="beilagen_beschreibungen">
                 <h1 id="beilagen" class="beilagen">Beilagen</h1>
                 <div class="menu">
@@ -88,26 +84,29 @@
                     <h3>Gesamt:</h3>
                     <h3 id="kosten_desktop">0.00$</h3>
                 </div>
-                <div id="bestell_button">Bestellen</div>
+                <button id="bestell_button">Bestellen</button>
             </div>
         </section>
 
     </div>
 
     <section class="basket_wrapper_responsive" id="basket_mobile">
-            <div class="basket">
-                <div id="basket_title">Warenkorb 
-                    <div id="cart_counter"></div>
+        <div class="basket">
+            <div id="basket_title">
+                <img src="./assets/icons/warenkorb-icon.png" alt="">
+                <div id="cart_counter"></div>
+                <span class="x_btn">X</span> 
+            </div>              
+        </div>
+        
+            <div class="basket_menus" id="basket_menus_mobile">Warenkorb leer</div>
+            <div class="gesamtkosten">
+                <h3>Gesamt:</h3>
+                <h3 id="kosten_mobile">0.00$</h3>
             </div>
-                <div class="basket_menus" id="basket_menus_mobile">Warenkorb leer</div>
-                <div class="gesamtkosten">
-                    <h3>Gesamt:</h3>
-                    <h3 id="kosten_mobile">0.00$</h3>
-                </div>
-                <div id="bestell_button_mobile">Bestellen</div>
-            </div>
-        </section>
-
+            <button id="bestell_button_mobile">Bestellen</button>
+        </div>
+    </section>
 
     <div class="footer">
             <div class="contentbegrenzung-main">

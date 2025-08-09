@@ -5,6 +5,7 @@
 .erste_beschreibung {
     padding-left: 10px;
     font-size: clamp(15px, 5vw, 20px);
+    padding-top: 30px;
 }
 
 .hauptgerichte_beilage {
@@ -30,7 +31,7 @@
 }
 
 .menu_beschreibungen p {
-    color: orange;
+    color: black;
 }
 
 .beilagen_beschreibungen {
@@ -41,7 +42,7 @@
 }
 
 .beilagen_beschreibungen p {
-    color: orange;
+    color: black;
 }
 
 .basket_title {
@@ -65,8 +66,9 @@
     display: flex;
     justify-content: space-between;
     margin: 20px 0px;
-    padding: 10px 0px;
+    padding: 0px;
     border-top: 1px solid #333;
+    text-decoration: underline;
 }
 
 #bestell_button {
@@ -81,4 +83,8 @@
     display: flex;
     justify-content: center;
     cursor: pointer;
+}
+
+#bestell_button_mobile {
+    width: 100%;
 }

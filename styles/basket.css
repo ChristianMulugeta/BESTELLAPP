@@ -6,11 +6,10 @@
 }
 
 .basket {
-    display: flex;
-    justify-content: center;
-    top: 5px;
-    position: sticky;
-    flex-direction: column;
+  display: flex;
+  justify-content: center;
+  position: sticky;
+  flex-direction: column;
 }
 
 .basket_plus,
@@ -64,4 +63,14 @@
 .basket_plus:hover,
 .basket_minus:hover {
   background-color: #e07b00;
+}
+
+#bestell_button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+#bestell_button_mobile:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }

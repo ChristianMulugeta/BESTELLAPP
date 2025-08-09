@@ -4,7 +4,7 @@
     margin-left: clamp(10px, 2vw, 20px);
 }
 
-.content_wrapper img {
+.first_img {
     height: 150px;
     object-fit: cover;
     object-position: left;
@@ -39,10 +39,12 @@
 
 .round_img {
     position: absolute;
-    top: 13%;
+    top: 10%;
     left: 40%;
     transform: translate(-10%, 60%);
     border-radius: 50%;
     object-fit: cover;
+    width: clamp(90px, 10vw, 110px);
+    height: clamp(90px, 10vw, 110px);
 }
 
