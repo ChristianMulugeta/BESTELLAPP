@@ -4,9 +4,10 @@ const basketMenuMobile = document.getElementById("basket_menus_mobile");
 const costsDesktop = document.getElementById("kosten_desktop");
 const costsMobile = document.getElementById("kosten_mobile");
 
-const basketWrapperResponsive = document.getElementById("basket_mobile");
+const basketWrapperResponsive = document.getElementById("basket_desktop");
 
-const basketTitle = document.getElementById("basket_title");
+const basketTitle = document.getElementsByClassName("basket")[0];
+const basketContent = document.getElementsByClassName("basket_content")[0];
 
 const order_button = document.getElementById("bestell_button");
 
@@ -14,12 +15,14 @@ const buttons = document.getElementsByClassName("plus_button");
 
 const cartCount = document.getElementById("cart_counter");
 
+const basketItemsDesktop = document.getElementById("basket_menus_desktop");
+
 const basket = [];
 
 let total = 0;
 
 basketTitle.addEventListener("click", () => {
-    basketWrapperResponsive.classList.toggle("visible");
+    basketContent.classList.toggle("visible");
 });
 
 function addToCartButton() {
@@ -49,18 +52,14 @@ function updateCartCount() {
 
 function updateBasketDisplay() {
     basketMenuDesktop.innerHTML = "";
-    basketMenuMobile.innerHTML = "";
     order_button.disabled = basket.length === 0;
-    bestell_button_mobile.disabled = basket.length === 0; 
     if (basket.length === 0) {
         basketMenuDesktop.innerText = "Warenkorb leer";
-        basketMenuMobile.innerText = "Warenkorb leer";
         costsDesktop.innerText = "0.00$";
         costsMobile.innerText = "0.00$";
         return;
     }
     costsDesktop.innerText = `${total.toFixed(2)}$`;
-    costsMobile.innerText = `${total.toFixed(2)}$`;
     shortcuts();
 }
 
@@ -71,7 +70,25 @@ function shortcuts() {
     minusButtons();
     updateCartCount();
     orderButton();
-    orderButtonMobile();
+}
+
+function createDesktopBasketItem() {
+    basket.forEach(item => {
+        const itemTotal =item.price * item.quantity;
+        let itemElementDesktop = document.createElement("div");
+            itemElementDesktop.className = "basket_item";
+            itemElementDesktop.innerHTML = createDesktopBasketItembtns(item, itemTotal);
+            basketMenuDesktop.appendChild(itemElementDesktop);  
+    })
+}
+
+function createMobileBasketItem() {
+    basket.forEach(item => {
+        const itemTotal =item.price * item.quantity;
+        let itemElementMobile = document.createElement("div");
+            itemElementMobile.className = "basket_item";
+            itemElementMobile.innerHTML = createMobileBasketItembtns(item, itemTotal);
+    })
 }
 
 function plusButtons() {

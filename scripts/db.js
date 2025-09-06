@@ -1,17 +1,17 @@
 const product = [
     {
         id: 0,
-        title: "Pizza Krabben",
+        title: "Margherita",
         price: 9.50,
     },
     {
         id: 1,
-        title: "Pizza Margherita",
+        title: "Marinara",
         price: 5.90,
     },
     {
         id: 2,
-        title: "Pizza Diavolo (scharf)",
+        title: "Diavolo",
         price: 8.50,
     },
     {
@@ -21,7 +21,7 @@ const product = [
     },
     {
         id: 4,
-        title: "Pommes mit Nuggets",
+        title: "Pom&Nug",
         price: 4.50,
     },
     {

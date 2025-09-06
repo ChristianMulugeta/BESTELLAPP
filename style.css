@@ -23,11 +23,12 @@ html body {
 .content {
     width: calc(100% - 300px);
     padding: 0;
-    height: 1993px;
+    max-height: 3000px;
+    position: relative;
 }
 
 .erste_beschreibung span {
-    color: orange;
+    color: black;
 }
 
 .hauptgerichte_beilage {
@@ -48,18 +49,25 @@ a :hover {
 }
 
 .menu{
-    border: 2px solid;
-    border-color: rgba(0, 0, 0, 0.5);
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    padding: 1rem;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+  border: 2px solid;
+  border-color: rgba(0, 0, 0, 0.5);
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  padding: 1rem;
+  transition: background-color 0.5s ease, transform 0.3s ease;
+  border-radius: 12px;
+  gap: 2%;
+}
+
+.menu_dish {
+  display: flex;
+  flex-direction: column;
 }
 
 .menu:hover {
     background-color: lightgoldenrodyellow;
-    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.9);
 }
 
 .plus_button {
@@ -75,6 +83,13 @@ a :hover {
     color: orange;
     border-color: rgba(0, 0, 0, 0.5);
     background-color: white;
+    transition: all 0.3s ease;
+    border-radius: 12px;
+}
+
+.plus_button:hover {
+  background-color: orange;
+  color: white;
 }
 
 .basket_wrapper_responsive {
@@ -89,7 +104,9 @@ a :hover {
     text-align: center;
 }
 
-
+.x_btn{
+  display: none;
+}
 
 @media (max-width: 700px) {
 
@@ -98,21 +115,24 @@ a :hover {
   }
 
   .basket_wrapper {
-    display: none;
+    display: block;
+    position: fixed;
+    background-color: aliceblue;
+    width: 100%;
+    box-sizing: border-box;
+    max-height: 650px;
+    position: fixed;
+    bottom: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
   }
 
   .menu {
     width: calc(100% - 50px)
   }
   
-  #basket_title {
+  .basket_title {
     cursor: pointer;
-    background-color: orange;
-    padding: 10px;
-    font-weight: bold;
-    display: flex;
-    justify-content: center;
-    align-items: center;
   }
 
   #basket_title img {
@@ -132,11 +152,11 @@ a :hover {
     z-index: 1000;
     overflow: hidden;
     max-height: 50px;
-    transition: max-height 0.3 ease;
+    transition: max-height 0.3s ease;
   }
 
-  .basket_wrapper_responsive.visible {
-    max-height: 500px;    
+  .basket_wrapper.visible {
+    max-height: 550px;    
   }
 
   .content {
@@ -145,7 +165,7 @@ a :hover {
   }
 
   #basket_menus_mobile {
-    padding-top: 6px;
+    padding-top: 10px;
   }
 
   #bestell_button_mobile {
@@ -159,23 +179,43 @@ a :hover {
   }
 
   .x_btn {
+    display: block;
     right: 15px;
     position: absolute;
     color: white;
   }
 
-}
+  .basket_content {
+    max-height: 0;
+    overflow: hidden;
+    transition: 0.9 ease;
+  }
 
-@media (max-width: 375px) {
-  .menu h1 {
-    font-size: 20px;
+  .basket_content.visible {
+    max-height: 500px;
   }
 
 }
 
-@media (max-width: 335px) {
+@media (max-width: 905px) {
+  .menu h1 {
+    font-size: 20px;
+  }
+
+  .menu img {
+    max-height: 10vw;
+    max-width: 10vh;
+    border-radius: 12px;
+    object-fit: contain;
+  }
+
+}
+
+@media (max-width: 805px) {
   .menu {
     font-size: 16px;
+    display: flex;
+    align-items: center;
   }
 
   .menu h1 {
@@ -190,12 +230,30 @@ a :hover {
   }
 }
 
+@media (max-width: 335px) {
+  .plus_button {
+    width: 30px;
+    height: 30px;
+    font-size: 25px;
+    line-height: 18px;
+  }
+}
 
 
-1. überschneidungen 
+
+/* 1. überschneidungen 
 2. fontsize und -family ändern
 3. kontrast ändern von preis 
 4. mann kann immer bestellen
 5. eventlisteners entfernen
 6. updateCartCount nach bestellung auf null setzen
-7. round img anpassen
+7. round img anpassen */
+
+/* kontrast */
+/* round img überschneidungen */
+/* sticky warenkorb */
+/* in templates logik von templates aussortieren */
+/* responsive basket nochmal anschauen */
+html gerichte in template
+/* bestellen desktop reagirt nicht gleich wie responsive */
+/* menu skallieren */

@@ -1,122 +1,141 @@
 <!DOCTYPE html>
 <html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bestellapp</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="styles/assets.css">
-    <link rel="stylesheet" href="styles/basket.css">
-    <link rel="stylesheet" href="styles/fonts.css">
-    <link rel="stylesheet" href="styles/standard.css">
-    <link rel="icon" type="image/x-icon" href="./assets/icons/dinner.png">
-</head>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="styles/assets.css" />
+    <link rel="stylesheet" href="styles/basket.css" />
+    <link rel="stylesheet" href="styles/fonts.css" />
+    <link rel="stylesheet" href="styles/standard.css" />
+    <link rel="icon" type="image/x-icon" href="./assets/icons/dinner.png" />
+  </head>
 
-<body>
+  <body>
     <header class="header">
-        <img src="./assets/icons/dinner.png" alt="">
-        Bestellapp
+      <img src="./assets/icons/dinner.png" alt="" />
+      Bestellapp
     </header>
     <div class="content_wrapper">
-        
-        <section class="content"><img class="first_img" src="./assets/img/main-img-1.jpg" alt="">
-            <img class="round_img" src="./assets/img/round-img.png" alt >
-            <div class="erste_beschreibung">
-                <h1>Paradise Pizzeria</h1>
-                <span> Bewertung (4.5 von 5 Sternen)</span>
-                <div class="hauptgerichte_beilage">
-                    <img src="./assets/icons/hautpgericht-arrow.png" alt="">
-                    <a href="#Hauptgerichte"><p>Hauptgerichte</p></a> <a href="#beilagen"><p>Beilage</p></a>
-                </div>
+      <section class="content">
+        <img class="first_img" src="./assets/img/main-img-1.jpg" alt="" />
+        <img class="round_img" src="./assets/img/round-img.png" alt />
+        <div class="erste_beschreibung">
+          <h1>Paradise Pizzeria</h1>
+          <span> Bewertung (4.5 von 5 Sternen)</span>
+          <div class="hauptgerichte_beilage">
+            <img src="./assets/icons/hautpgericht-arrow.png" alt="" />
+            <a href="#Hauptgerichte"><p>Hauptgerichte</p></a>
+            <a href="#beilagen"><p>Beilage</p></a>
+          </div>
+        </div>
+        <img
+          class="second_img"
+          src="./assets/img/hauptgericht-img.jpg"
+          alt=""
+        />
+        <div class="menu_beschreibungen">
+          <h1 id="Hauptgerichte" class="Hauptgerichte">Hauptgerichte</h1>
+          <div class="menu">
+            <img
+              class="menu_img"
+              src="./assets/img/pizza_margherita.avif"
+              alt=""
+            />
+            <div class="menu_dish">
+              <h1>Margherita</h1>
+              <span>Tomatensauce, Mozzrella, Basilikum</span>
+              <p>9,50$</p>
+              <button class="plus_button" data-id="0">+</button>
             </div>
-            <img class="second_img" src="./assets/img/hauptgericht-img.jpg" alt="">
-            <div class="menu_beschreibungen">
-                <h1 id="Hauptgerichte" class="Hauptgerichte">Hauptgerichte</h1>
-                <div class="menu">
-                    <h1>Pizza Krabben</h1>
-                    <span>mit Krabben und Peperoni</span>
-                    <p>9,50$</p>
-                    <button class="plus_button" data-id="0">+</button>
-                </div>
-                <div class="menu">
-                    <h1>Pizza Margherita</h1>
-                    <span>mit Mozarella</span>
-                    <p>5,90$</p>
-                    <button class="plus_button" data-id="1">+</button>
-                </div>
-                <div class="menu">
-                    <h1>Pizza Diavolo (scharf)</h1>
-                    <span>mit Salami, Zwiebel, Pepperoni und Knoblauch</span>
-                    <p>8,50$</p>
-                    <button class="plus_button" data-id="2">+</button>
-                </div>
-                <div class="menu">
-                    <h1>Pizzabrötchen</h1>
-                    <span>mit Käse und knoblauch</span>
-                    <p>12,90$</p>
-                    <button class="plus_button" data-id="3">+</button>
-                </div>   
+          </div>
+          <div class="menu">
+            <img src="./assets/img/pizza_marinara.avif" alt="" />
+            <div class="menu_dish">
+              <h1>Marinara</h1>
+              <span>Tomatensauce, Knoblauch, Oregano</span>
+              <p>5,90$</p>
+              <button class="plus_button" data-id="1">+</button>
             </div>
-            <img class="third_img" src="./assets/img/golden-goal-header.avif" alt="">
-            <div class="beilagen_beschreibungen">
-                <h1 id="beilagen" class="beilagen">Beilagen</h1>
-                <div class="menu">
-                    <h1>Pommes mit Nuggets</h1>
-                    <span>mit Ketchup und Mayonnaise</span>
-                    <p>4,50$</p>
-                    <button class="plus_button" data-id="4">+</button>
-                </div>
-                <div class="menu">
-                    <h1>Gemischter Salat</h1>
-                    <span>mit Französischer und Italienischer Sauce</span>
-                    <p>5,90$</p>
-                    <button class="plus_button" data-id="5">+</button>
-                </div>
+          </div>
+          <div class="menu">
+            <img src="./assets/img/pizza_diavolo.jpg" alt="" />
+            <div class="menu_dish">
+              <h1>Diavolo</h1>
+              <span>Salami, Zwiebel, Pepperoni, Knoblauch</span>
+              <p>8,50$</p>
+              <button class="plus_button" data-id="2">+</button>
             </div>
-        </section>
+          </div>
+          <div class="menu">
+            <img src="./assets/img/pizzabrötchen.avif" alt="" />
+            <div class="menu_dish">
+              <h1>Pizzabrötchen</h1>
+              <span>mit Käse und knoblauch</span>
+              <p>12,90$</p>
+              <button class="plus_button" data-id="3">+</button>
+            </div>
+          </div>
+        </div>
+        <img
+          class="third_img"
+          src="./assets/img/golden-goal-header.avif"
+          alt=""
+        />
+        <div class="beilagen_beschreibungen">
+          <h1 id="beilagen" class="beilagen">Beilagen</h1>
+          <div class="menu">
+            <img src="./assets/img/pommes&nuggets.jpg" alt="" />
+            <div class="menu_dish">
+              <h1>Pommes&Nuggets</h1>
+              <span>mit Ketchup und Mayonnaise</span>
+              <p>4,50$</p>
+              <button class="plus_button" data-id="4">+</button>
+            </div>
+          </div>
+          <div class="menu">
+            <img src="./assets/img/Gemischter-Salat.png" alt="" />
+            <div class="menu_dish">
+              <h1>Gemischter Salat</h1>
+              <span>mit Französischer und Italienischer Sauce</span>
+              <p>5,90$</p>
+              <button class="plus_button" data-id="5">+</button>
+            </div>
+          </div>
+        </div>
+      </section>
 
-        
-        <section class="basket_wrapper" id="basket_desktop">
-            <div class="basket">
-                <div class="basket_title">Warenkorb</div>
-                <div class="basket_menus" id="basket_menus_desktop">Warenkorb leer</div>
-                <div class="gesamtkosten">
-                    <h3>Gesamt:</h3>
-                    <h3 id="kosten_desktop">0.00$</h3>
-                </div>
-                <button id="bestell_button">Bestellen</button>
-            </div>
-        </section>
-
-    </div>
-
-    <section class="basket_wrapper_responsive" id="basket_mobile">
+      <section class="basket_wrapper" id="basket_desktop">
         <div class="basket">
-            <div id="basket_title">
-                <img src="./assets/icons/warenkorb-icon.png" alt="">
-                <div id="cart_counter"></div>
-                <span class="x_btn">X</span> 
-            </div>              
-        </div>
-        
-            <div class="basket_menus" id="basket_menus_mobile">Warenkorb leer</div>
-            <div class="gesamtkosten">
-                <h3>Gesamt:</h3>
-                <h3 id="kosten_mobile">0.00$</h3>
+          <div class="basket_title">
+            <img src="./assets/icons/warenkorb-icon.png" alt="" />
+            <div id="cart_counter"></div>
+            <span class="x_btn">X</span>
+          </div>
+
+          <div class="basket_content">
+            <div class="basket_menus" id="basket_menus_desktop">
+              Warenkorb leer
             </div>
-            <button id="bestell_button_mobile">Bestellen</button>
+            <div class="gesamtkosten">
+              <h3>Gesamt:</h3>
+              <h3 id="kosten_desktop">0.00$</h3>
+            </div>
+            <button id="bestell_button">Bestellen</button>
+          </div>
         </div>
-    </section>
+      </section>
+    </div>
 
     <div class="footer">
-            <div class="contentbegrenzung-main">
-            <span>2025 Developer Akademie GmbH</span>
-        </div>    
+      <div class="contentbegrenzung-main">
+        <span>2025 Developer Akademie GmbH</span>
+      </div>
     </div>
-    
+
     <script src="script.js" defer></script>
     <script src="scripts/db.js"></script>
     <script src="scripts/template.js"></script>
-
-</body>
+  </body>
 </html>
