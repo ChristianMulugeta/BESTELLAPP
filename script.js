@@ -6,7 +6,7 @@ const costsMobile = document.getElementById("kosten_mobile");
 
 const basketWrapperResponsive = document.getElementById("basket_desktop");
 
-const basketTitle = document.getElementsByClassName("basket")[0];
+const basketTitle = document.getElementsByClassName("basket_title")[0];
 const basketContent = document.getElementsByClassName("basket_content")[0];
 
 const order_button = document.getElementById("bestell_button");
